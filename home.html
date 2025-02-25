@@ -23,11 +23,11 @@
                 <div class="flex gap-1">
                     <img class="w-16" src="./assets/Group.png" alt="">
                     <div>
-                        <h1 class="text-3xl font-bold">$3332.87</h1>
+                        <h1 class="text-3xl font-bold">$<span id="main-balance">3332.87</span></h1>
                         <p class="border rounded p-1">Available Balance</p>
                     </div>
                 </div>
-                <button class="btn btn-outline mt-4">Logout <i class="fa-solid fa-right-from-bracket"></i></button>
+                <button id="logout-btn" class="btn btn-outline mt-4">Logout <i class="fa-solid fa-right-from-bracket"></i></button>
             </nav>
             <section class="mt-8 px-6">
                 <div class="flex flex-col gap-3">
@@ -77,12 +77,12 @@
                               </fieldset>
                           <fieldset class="fieldset">
                             <label class="fieldset-label">Bank Acoount Number</label>
-                            <input type="number" class="input border-none rounded-3xl" placeholder="Enter 11 Digit Account Number" />
+                            <input value="15772983091" id="account-number" type="number" class="input border-none rounded-3xl" placeholder="Enter 11 Digit Account Number" required />
                             <label class="fieldset-label">Amount to Add</label>
-                            <input type="number" class="input border-none rounded-3xl" placeholder="Amount to Add" />
+                            <input id="add-amount" type="number" class="input border-none rounded-3xl" placeholder="Amount to Add" required/>
                             <label class="fieldset-label">PIN Number</label>
-                            <input type="number" class="input border-none rounded-3xl" placeholder="Enter 4 digit PIN number" />
-                            <button class="btn btn-neutral mt-4 bg-blue-500 rounded-3xl border-none">Add Money</button>
+                            <input id="pin" type="number" class="input border-none rounded-3xl" placeholder="Enter 4 digit PIN number" required/>
+                            <button id="add-money" class="btn btn-neutral mt-4 bg-blue-500 rounded-3xl border-none">Add Money</button>
                           </fieldset>
                         </div>
                       </div>
@@ -91,7 +91,7 @@
         </header>
     </section>
 
-
+<script src="./script/addmoney.js"></script>
 </body>
 
 </html>
