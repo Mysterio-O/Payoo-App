@@ -22,7 +22,7 @@
             <!-- navbar -->
             <nav class="flex justify-between ml-5 mr-5 items-center">
                 <div class="flex gap-1">
-                    <img class="w-16" src="./assets/Group.png" alt="">
+                    <img id="home" class="w-16" src="./assets/Group.png" alt="">
                     <div>
                         <h1 class="text-3xl font-bold">$<span id="main-balance">3332.87</span></h1>
                         <p class="border rounded p-1">Available Balance</p>
@@ -41,33 +41,33 @@
                 </div>
                 <!-- options -->
                 <div id="box-container" class="grid grid-cols-3 mt-14 gap-4">
-                    <div id="" class="card text-center rounded-md p-4">
+                    <div id="add-money" class="card text-center rounded-md p-4">
                         <img class="mx-auto" src="./assets/wallet1.png" alt="">
                         <h3>Add Money</h3>
                     </div>
-                    <div id="" class="card text-center rounded-md p-4">
+                    <div id="cash-out" class="card text-center rounded-md p-4">
                         <img class="mx-auto" src="./assets/send1.png" alt="">
                         <h3>CashOut</h3>
                     </div>
-                    <div id="" class="card text-center rounded-md p-4">
+                    <div id="transfer-money" class="card text-center rounded-md p-4">
                         <img class="mx-auto" src="./assets/money1.png" alt="">
                         <h3>Transfer Money</h3>
                     </div>
-                    <div id="" class="card text-center rounded-md p-4">
+                    <div id="get-bonus" class="card text-center rounded-md p-4">
                         <img class="mx-auto" src="./assets/bonus1.png" alt="">
                         <h3>Get Bonus</h3>
                     </div>
-                    <div id="" class="card text-center rounded-md p-4">
+                    <div id="pay-bill" class="card text-center rounded-md p-4">
                         <img class="mx-auto" src="./assets/purse1.png" alt="">
                         <h3>Pay Bill</h3>
                     </div>
-                    <div id="" class="card text-center rounded-md p-4">
+                    <div id="transaction" class="card text-center rounded-md p-4">
                         <img class="mx-auto" src="./assets/transaction1.png" alt="">
                         <h3>Transaction</h3>
                     </div>
                 </div>
                 <!-- add money section -->
-                <section class="mt-10">
+                <section id="add-money-section" class="mt-10">
                     <h1 class="text2xl font-semibold mb-4">Add Money</h1>
                     <div class="card w-full max-w-sm shrink-0 shadow-2xl">
                         <div class="card-body">
@@ -100,7 +100,7 @@
 
                 <!-- cash out section -->
 
-                <section class="mt-7">
+                <section id="cash-out-section" class="mt-7">
                     <h3>Cash Out</h3>
                     <div class="card w-full max-w-sm shrink-0 shadow-2xl mt-3">
                         <div class="card-body">
@@ -123,7 +123,7 @@
 
                 <!-- transfer money section -->
 
-                <section class="mt-7">
+                <section id="tranasfer-money-section" class="mt-7">
                     <h3>Transfer Money</h3>
                     <div class="card w-full max-w-sm shrink-0 shadow-2xl mt-3">
                         <div class="card-body">
@@ -146,7 +146,7 @@
 
                 <!-- get bonus section -->
 
-                <section class="mt-7">
+                <section id="get-bonus-section" class="mt-7">
                     <h3>Transfer Money</h3>
                     <div class="card w-full max-w-sm shrink-0 shadow-2xl mt-3">
                         <div class="card-body">
@@ -162,7 +162,7 @@
 
                 <!-- pay bill section -->
 
-                <section class="mt-10">
+                <section id="pay-bill-section" class="mt-10">
                     <h1 class="text2xl font-semibold mb-4">Pay Bills</h1>
                     <div class="card w-full max-w-sm shrink-0 shadow-2xl">
                         <div class="card-body">
@@ -194,9 +194,68 @@
 
                 <!-- transaction history section -->
 
-                <section class="mt-10">
+                <section id="transaction-history-section" class="mt-10">
                     <div class="flex justify-between items-center">
                         <h3 class="font-semibold text-lg">Transaction History</h3>
+                        <p class="text-sm text-[#080808] opacity-50">View all</p>
+                    </div>
+                    <div id="history-container" class="rounded-xl mt-4 flex flex-col gap-3">
+                        <div id="electricity-bill" class="flex justify-between items-center p-2 bg-white rounded-xl">
+                            <div class="flex gap-2">
+                                <div class="rounded-[50%] p-2 bg-[#0808080D] flex justify-center items-center">
+                                    <img src="./assets/wallet1.png" alt="">
+                                </div>
+                                <div>
+                                    <h4 class="text-[#080808B3] font-semibold text-lg">Electricity Bill</h4>
+                                    <p class="text-[#080808B3] text-sm">Today 1:44 AM</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                        <div id="electricity-bill" class="flex justify-between items-center p-2 bg-white rounded-xl">
+                            <div class="flex gap-2">
+                                <div class="rounded-[50%] p-2 bg-[#0808080D] flex justify-center items-center">
+                                    <img src="./assets/wallet1.png" alt="">
+                                </div>
+                                <div>
+                                    <h4 class="text-[#080808B3] font-semibold text-lg">Bank Deposit</h4>
+                                    <p class="text-[#080808B3] text-sm">Today 1:44 AM</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                        <div id="electricity-bill" class="flex justify-between items-center p-2 bg-white rounded-xl">
+                            <div class="flex gap-2">
+                                <div class="rounded-[50%] p-2 bg-[#0808080D] flex justify-center items-center">
+                                    <img src="./assets/wallet1.png" alt="">
+                                </div>
+                                <div>
+                                    <h4 class="text-[#080808B3] font-semibold text-lg">Mobile Recharge</h4>
+                                    <p class="text-[#080808B3] text-sm">Today 1:44 AM</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                        <div id="electricity-bill" class="flex justify-between items-center p-2 bg-white rounded-xl">
+                            <div class="flex gap-2">
+                                <div class="rounded-[50%] p-2 bg-[#0808080D] flex justify-center items-center">
+                                    <img src="./assets/wallet1.png" alt="">
+                                </div>
+                                <div>
+                                    <h4 class="text-[#080808B3] font-semibold text-lg">Gas Bill</h4>
+                                    <p class="text-[#080808B3] text-sm">Today 1:44 AM</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- latest payment section -->
+
+                <section id="latest-payment-section" class="mt-10">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-semibold text-lg">Latest Payment</h3>
                         <p class="text-sm text-[#080808] opacity-50">View all</p>
                     </div>
                     <div id="history-container" class="rounded-xl mt-4 flex flex-col gap-3">
@@ -255,6 +314,7 @@
     </section>
 
     <script src="./script/addmoney.js"></script>
+    <script src="./script/toggle.js"></script>
 </body>
 
 </html>
