@@ -1,28 +1,43 @@
 document.getElementById('add-money-btn').addEventListener('click', function (event) {
     event.preventDefault();
-    const accountNumber = document.getElementById('account-number').value;
-    const addAmount = document.getElementById('add-amount').value;
-    const pin = document.getElementById('pin').value;
-    const mainBalance = document.getElementById('main-balance').innerText;
+    const bankAccountNumber = document.getElementById('bank-account-number').value;
+    //    console.log(typeof bankAccountNumber);
+    const amount = getValueById('add-amount');
+    const pin = getValueById('add-pin');
+    const mainBalance = getInnerTextById('main-balance');
+    const bankName = document.getElementById('bank-select').value;
+    if (bankAccountNumber.length === 11) {
+        if (pin === 1234) {
+            const newBalance = amount + mainBalance;
+            const balance = addNewInner_Text('main-balance', newBalance);
 
-    const convertedAcc = parseInt(accountNumber);
-    const convertedAmount = parseFloat(addAmount);
-    const convertedPin = parseInt(pin);
-    let convertedBalance = parseFloat(mainBalance).toFixed(2);
+            const container = document.getElementById('history-container');
+            const div = document.createElement('div');
+            div.classList.add("flex", "justify-between", "items-center", "p-2", "bg-white", "rounded-xl");
 
-    if (convertedPin && convertedAmount && accountNumber.length) {
-        if (convertedPin === 1234) {
-            const newBalance = convertedAmount + convertedBalance;
-            document.getElementById('main-balance').innerText = newBalance;
-        }
-        else if (convertedAmount <= 0) {
-            alert('Enter Amount');
+            div.innerHTML = `
+                <div class="flex gap-2">
+                                <div class="rounded-[50%] p-2 bg-[#0808080D] flex justify-center items-center">
+                                    <img src="./assets/wallet1.png" alt="">
+                                </div>
+                                <div>
+                                    <h4 class="text-[#080808B3] font-semibold text-lg">Add Money</h4>
+                                    <p class="text-[#080808B3]"> Money $${amount} added from ${bankName} (${bankAccountNumber})</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+
+            `
+            container.appendChild(div);
+            alert('Money Added');
         }
         else {
-        alert('Enter valid PIN')
+            alert("Invalid PIN");
+        }
     }
+    else {
+        alert('Enter Valid Account Number');
     }
-    
 })
 
 document.getElementById('logout-btn').addEventListener('click', function () {
