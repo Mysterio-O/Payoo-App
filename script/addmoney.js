@@ -1,4 +1,4 @@
-document.getElementById('add-money').addEventListener('click', function (event) {
+document.getElementById('add-money-btn').addEventListener('click', function (event) {
     event.preventDefault();
     const accountNumber = document.getElementById('account-number').value;
     const addAmount = document.getElementById('add-amount').value;
@@ -8,7 +8,7 @@ document.getElementById('add-money').addEventListener('click', function (event) 
     const convertedAcc = parseInt(accountNumber);
     const convertedAmount = parseFloat(addAmount);
     const convertedPin = parseInt(pin);
-    let convertedBalance = parseFloat(mainBalance);
+    let convertedBalance = parseFloat(mainBalance).toFixed(2);
 
     if (convertedPin && convertedAmount && accountNumber.length) {
         if (convertedPin === 1234) {
